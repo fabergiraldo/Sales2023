@@ -1,3 +1,4 @@
 # Sales2023
-##Introducción
+## Introducción
+ 
 Este es un ejemplo de un carrito de compras
