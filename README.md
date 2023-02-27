@@ -1,4 +1,3 @@
-# Sales2023
+# Sales 2023
 ## Introducción
- 
-Este es un ejemplo de un carrito de compras
+Este es el projecto de ejemplo de una carrito de compras
