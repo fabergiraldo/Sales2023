@@ -22,6 +22,19 @@ namespace Sales.API.Controllers
             return Ok(await _context.Categories.ToListAsync());
         }
 
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetAsync(int id)
+        {
+            var category = await _context.Countries
+                .FirstOrDefaultAsync(x => x.Id == id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(category);
+        }
+
         [HttpPost]
         public async Task<ActionResult> PostAsync(Category category)
         {

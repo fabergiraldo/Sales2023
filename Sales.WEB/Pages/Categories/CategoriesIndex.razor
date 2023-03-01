@@ -5,7 +5,7 @@
 
 <h3>Categorias</h3>
 
-<a class="btn btn-primary mb-3" href="/countries/create">Nueva Categoria</a>
+<a class="btn btn-primary mb-3" href="/categories/create">Nueva Categoria</a>
 
 <GenericList MyList="Categories">
     <Body>
@@ -24,7 +24,6 @@
                             @category.Name
                         </td>
                         <td>
-                            <a class="btn btn-info" href="/categories/details/@category.Id">Detalles</a>
                             <a class="btn btn-warning" href="/categories/edit/@category.Id">Editar</a>
                             <button class="btn btn-danger" @onclick=@(() => DeleteAsync(category.Id))>Borrar</button>
                         </td>
