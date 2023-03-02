@@ -25,7 +25,7 @@ namespace Sales.API.Controllers
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetAsync(int id)
         {
-            var category = await _context.Countries
+            var category = await _context.Categories
                 .FirstOrDefaultAsync(x => x.Id == id);
             if (category == null)
             {

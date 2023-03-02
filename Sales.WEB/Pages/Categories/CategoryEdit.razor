@@ -42,7 +42,7 @@ else
 
     private async Task EditAsync()
     {
-        var responseHttp = await repository.Put("/api/countries", category);
+        var responseHttp = await repository.Put("/api/categories", category);
         if (responseHttp.Error)
         {
             var message = await responseHttp.GetErrorMessageAsync();

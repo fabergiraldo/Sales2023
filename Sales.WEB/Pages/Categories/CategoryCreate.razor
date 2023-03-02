@@ -13,7 +13,7 @@
 
     private async Task Create()
     {
-        var httpResponse = await repository.Post("/api/countries", category);
+        var httpResponse = await repository.Post("/api/categories", category);
         if (httpResponse.Error)
         {
             var message = await httpResponse.GetErrorMessageAsync();
