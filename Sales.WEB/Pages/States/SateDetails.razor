@@ -15,8 +15,8 @@ else
                 <div class="card-header">
                     <span>
                 <i class="oi oi-globe"></i> @state.Name
-                <a class="btn btn-sm btn-primary float-end" @onclick=@(() => ShowModal())><i class="oi oi-plus"></i>Nueva Ciudad</a>
-                <a class="btn btn-sm btn-success float-end mx-2" href="/countries/details/@state.CountryId"><i class="oi-arrow-thick-left"></i>Regresar</a>
+                <a class="btn btn-primary" @onclick=@(() => ShowModal(StateId))>Nueva Ciudad</a>
+                <a class="btn btn-success" href="/countries/details/@state.CountryId">Regresar</a>
                     </span>
                 </div>
                 <div class="card-body">
@@ -53,8 +53,8 @@ else
                                 @city.Name
                             </td>
                             <td>
-                                        <a @onclick=@(() => ShowModal(city.Id, true)) class="btn btn-warning btn-sm"><i class="oi oi-pencil" /> Editar</a>
-                                     <button class="btn btn-danger btn-sm" @onclick=@(() => DeleteAsync(city.Id))><i class="oi oi-trash" /> Borrar</button>
+                                        <a @onclick=@(() => ShowModal(city.Id, true)) class="btn btn-warning"> Editar</a>
+                                     <button class="btn btn-danger" @onclick=@(() => DeleteAsync(city.Id))> Borrar</button>
                             </td>
                         </tr>
                     }
@@ -102,7 +102,7 @@ else
         }
         else
         {
-            modalReference = Modal.Show<CityCreate>();
+            modalReference = Modal.Show<CityCreate>(string.Empty, new ModalParameters().Add("StateId", id));
         }
 
         var result = await modalReference.Result;

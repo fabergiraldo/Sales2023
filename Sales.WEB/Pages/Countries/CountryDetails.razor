@@ -14,8 +14,8 @@
                 <div class="card-header">
                     <span>
                 <i class="oi oi-globe"></i> @country.Name
-                <a class="btn btn-sm btn-primary float-end" @onclick=@(() => ShowModal())><i class="oi oi-plus"></i>Nuevo Estado/Departamento</a>
-                <a class="btn btn-sm btn-success float-end mx-2" href="/countries"><i class="oi-arrow-thick-left"></i>Regresar</a>
+                <a class="btn btn-primary" @onclick=@(() => ShowModal(country.Id))>Nuevo Estado/Departamento</a>
+                <a class="btn btn-success" href="/countries">Regresar</a>
                     </span>
                 </div>
                 <div class="card-body">
@@ -106,7 +106,7 @@
         }
         else
         {
-            modalReference = Modal.Show<StateCreate>();
+            modalReference = Modal.Show<StateCreate>(string.Empty, new ModalParameters().Add("CountryId", id));
         }
 
         var result = await modalReference.Result;
